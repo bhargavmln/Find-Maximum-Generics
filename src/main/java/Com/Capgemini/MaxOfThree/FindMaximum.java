@@ -2,35 +2,13 @@ package Com.Capgemini.MaxOfThree;
 
 public class FindMaximum {
 
-	public static Integer testMax(Integer intX, Integer intY, Integer intZ) {
-		Integer max = intX;
-		if (intY.compareTo(max) > 0) {
-			max = intY;
+	public static <E extends Comparable<E>> E testMax(E valueX, E valueY, E valueZ) {
+		E max = valueX;
+		if (valueY.compareTo(max) > 0) {
+			max = valueY;
 		}
-		if (intZ.compareTo(max) > 0) {
-			max = intZ;
-		}
-		return max;
-	}
-
-	public static Float testMax(Float floatX, Float floatY, Float floatZ) {
-		Float max = floatX;
-		if (floatY.compareTo(max) > 0) {
-			max = floatY;
-		}
-		if (floatZ.compareTo(max) > 0) {
-			max = floatZ;
-		}
-		return max;
-	}
-	
-	public static String testMax(String stringX, String stringY, String stringZ) {
-		String max = stringX;
-		if (stringY.compareTo(max) > 0) {
-			max = stringY;
-		}
-		if (stringZ.compareTo(max) > 0) {
-			max = stringZ;
+		if (valueZ.compareTo(max) > 0) {
+			max = valueZ;
 		}
 		return max;
 	}
