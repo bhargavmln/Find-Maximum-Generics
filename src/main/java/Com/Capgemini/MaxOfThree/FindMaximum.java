@@ -1,9 +1,21 @@
 package Com.Capgemini.MaxOfThree;
 
-public class FindMaximum {
+public class FindMaximum<T extends Comparable<T>> {
 
-	public static <E extends Comparable<E>> E testMax(E valueX, E valueY, E valueZ) {
-		E max = valueX;
+	T valueX, valueY, valueZ;
+
+	public FindMaximum(T x, T y, T z) {
+		this.valueX = x;
+		this.valueY = y;
+		this.valueZ = z;
+	}
+
+	public T testMax() {
+		return FindMaximum.testMax(valueX, valueY, valueZ);
+	}
+
+	public static <T extends Comparable<T>> T testMax(T valueX, T valueY, T valueZ) {
+		T max = valueX;
 		if (valueY.compareTo(max) > 0) {
 			max = valueY;
 		}
@@ -15,8 +27,8 @@ public class FindMaximum {
 
 	public static void main(String[] args) {
 
-		System.out.println(testMax(1, 2, 3));
-		System.out.println(testMax(1.1f,1.2f,1.3f));
-		System.out.println(testMax("Apple","Peach","Banana"));
+		System.out.println(new FindMaximum<Integer>(1, 2, 3).testMax());
+		System.out.println(new FindMaximum<Float>(1.1f, 2.2f, 3.3f).testMax());
+		System.out.println(new FindMaximum<String>("Apple", "Peach", "Banana").testMax());
 	}
 }
